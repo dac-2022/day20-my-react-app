@@ -5,10 +5,15 @@ const accountSlice = createSlice({
   name: "account",
 
   initialState: {
-    balance: 100,
+    balance: 1000,
+    name: "rahul adfabcd",
   },
 });
 
 // Create Store
-const store = configureStore({ reducer: { account: accountSlice.reducer } });
+const store = configureStore({
+  reducer: {
+    account: accountSlice.reducer,
+  },
+});
 export default store;

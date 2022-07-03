@@ -14,11 +14,11 @@ function App() {
 
 function UserAccount() {
   let state = useSelector((state) => state);
-  let [user] = useState("Rahul");
+  console.log(state);
 
   return (
     <div>
-      <h1>User Name - {user}</h1>
+      <h1>User Name - {state.account.name}</h1>
       <h1>Address - Mumbai/Kochi</h1>
       <h1>Mobile - 12122121</h1>
       <h1>Balance - {state.account.balance}</h1>
@@ -28,6 +28,7 @@ function UserAccount() {
 
 function AddBalance() {
   let state = useSelector((state) => state);
+  console.log(state);
 
   return (
     <div>
