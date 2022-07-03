@@ -10,6 +10,7 @@ const accountSlice = createSlice({
   },
 
   reducers: {
+    // special function
     depositBalance: (state) => {
       state.balance += 1;
     },
