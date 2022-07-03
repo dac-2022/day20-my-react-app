@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { depositBalance } from "./store/store";
 
 function App() {
   return (
@@ -28,13 +29,18 @@ function UserAccount() {
 
 function AddBalance() {
   let state = useSelector((state) => state);
+  let dispatch = useDispatch();
   console.log(state);
 
   return (
     <div>
       <h1>Account Balance</h1>
       <h1>Balance - {state.account.balance}</h1>
-      <input type="button" value="Add/Deposit balance" />
+      <input
+        type="button"
+        value="Add/Deposit balance"
+        onClick={() => dispatch(depositBalance())}
+      />
     </div>
   );
 }

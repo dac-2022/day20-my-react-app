@@ -6,9 +6,22 @@ const accountSlice = createSlice({
 
   initialState: {
     balance: 1000,
-    name: "rahul adfabcd",
+    name: "rahul ",
+  },
+
+  reducers: {
+    depositBalance: (state) => {
+      state.balance += 1;
+    },
+
+    updateName: (state) => {
+      state.name = "Mr. " + state.name;
+    },
   },
 });
+
+// destructing
+export const { depositBalance, updateName } = accountSlice.actions;
 
 // Create Store
 const store = configureStore({
