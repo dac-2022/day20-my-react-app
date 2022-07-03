@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 function App() {
   return (
@@ -12,31 +13,27 @@ function App() {
 }
 
 function UserAccount() {
+  let state = useSelector((state) => state);
   let [user] = useState("Rahul");
-  let [balance] = useState(0);
+
   return (
     <div>
       <h1>User Name - {user}</h1>
       <h1>Address - Mumbai/Kochi</h1>
       <h1>Mobile - 12122121</h1>
-      <h1>Balance - {balance}</h1>
+      <h1>Balance - {state.account.balance}</h1>
     </div>
   );
 }
 
 function AddBalance() {
-  let [balance, setBalance] = useState(0);
-
-  const increment = () => {
-    const newcounter = balance + 1;
-    setBalance(newcounter);
-  };
+  let state = useSelector((state) => state);
 
   return (
     <div>
       <h1>Account Balance</h1>
-      <h1>Balance - {balance}</h1>
-      <input type="button" value="Add/Deposit balance" onClick={increment} />
+      <h1>Balance - {state.account.balance}</h1>
+      <input type="button" value="Add/Deposit balance" />
     </div>
   );
 }
